@@ -82,6 +82,9 @@ dependencies {
     //kotlinx-datetime
     implementation(libs.kotlinx.datetime)
 
+    //koin for android
+    implementation(libs.koin.android)
+
 }
 
 apollo {
