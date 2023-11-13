@@ -79,6 +79,9 @@ dependencies {
     //dotenv
     implementation(libs.dotenv.kotlin)
 
+    //kotlinx-datetime
+    implementation(libs.kotlinx.datetime)
+
 }
 
 apollo {
