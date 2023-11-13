@@ -1,5 +1,6 @@
 [versions]
 agp = "8.1.2"
+dotenv-kotlin = "6.4.1"
 glance-appwidget = "1.0.0"
 org-jetbrains-kotlin-android = "1.8.10"
 core-ktx = "1.9.0"
@@ -15,6 +16,7 @@ apollographql-apollo3 = "3.8.2"
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance-appwidget" }
 androidx-glance-material3 = { module = "androidx.glance:glance-material3", version.ref = "glance-appwidget" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+dotenv-kotlin = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "dotenv-kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }

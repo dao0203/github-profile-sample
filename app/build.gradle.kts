@@ -74,7 +74,10 @@ dependencies {
     implementation(libs.androidx.glance.material3)
 
     //apollo3
-    implementation(libs.com.apollographql.apollo3.runtime)
+//    implementation(libs.com.apollographql.apollo3.runtime)
+
+    //dotenv
+    implementation(libs.dotenv.kotlin)
 
 }
 
