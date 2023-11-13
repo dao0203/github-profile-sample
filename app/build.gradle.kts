@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.com.apollographql.apollo3)
 }
 
 android {
@@ -72,5 +73,13 @@ dependencies {
     implementation(libs.androidx.glance.appwidget)
     implementation(libs.androidx.glance.material3)
 
+    //apollo3
+    implementation(libs.com.apollographql.apollo3.runtime)
 
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.example.jetpack_glance_sample")
+    }
 }
