@@ -17,7 +17,7 @@ on:
       - release/*
 
 jobs:
-  kotlin:
+  reviewdog-suggest:
     name: runner / suggester / spotless
     runs-on: ubuntu-latest
     steps:
