@@ -17,7 +17,7 @@ on:
       - release/*
 
 jobs:
-  build:
+  kotlin:
     name: runner / suggester / spotless
     runs-on: ubuntu-latest
     steps:
@@ -28,9 +28,6 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-
-      - name: Build with Gradle
-        run: ./gradlew build
 
       - name: Run SpotlessKotlinApply
         run: ./gradlew spotlessKotlinApply
