@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  baseBranches: [
+    "main"
+  ],
+  dependencyDashboard: true,
+  "packageRules": [
+    {
+      "updateTypes": [
+        "patch"
+      ],
+      "automerge": true
+    }
+  ],
+  // 毎週月曜日の5時に実行
+  "schedule": [
+    "on monday at 5"
+  ]
+}
