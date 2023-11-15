@@ -1,9 +1,23 @@
 name: reviewdog-suggest
 
-on: [ pull_request ]
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+      - hotfix/*
+      - release/*
+  pull_request:
+    branches:
+      - main
+      - develop
+      - feature/*
+      - hotfix/*
+      - release/*
 
 jobs:
-  kotlin:
+  build:
     name: runner / suggester / spotless
     runs-on: ubuntu-latest
     steps:
@@ -15,8 +29,11 @@ jobs:
           java-version: 11
           distribution: 'adopt'
 
+      - name: Build with Gradle
+        run: ./gradlew build
+
       - name: Run SpotlessKotlinApply
-      - run: ./gradlew spotlessKotlinApply
+        run: ./gradlew spotlessKotlinApply
 
       - uses: reviewdog/action-setup@v1
         with:
