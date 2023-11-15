@@ -17,7 +17,7 @@ class GithubRepositoryImpl(
 ) : GithubRepository {
     override suspend fun getContributions(username: String): List<Contribution> {
         return withContext(defaultDispatcher) {
-            //今日の日付と1ヶ月前の日付を取得
+            // 今日の日付と1ヶ月前の日付を取得
             val today = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
             val from = today.month.minus(1)
             val response = apolloClient.query(
@@ -38,8 +38,6 @@ class GithubRepositoryImpl(
                     }
 
             contributions ?: emptyList()
-
         }
     }
 }
-
