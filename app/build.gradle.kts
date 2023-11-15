@@ -89,6 +89,6 @@ dependencies {
 
 apollo {
     service("service") {
-        packageName.set("com.example")
+        packageName.set("com.example.jetpack_glance_sample")
     }
 }
