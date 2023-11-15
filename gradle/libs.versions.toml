@@ -13,7 +13,7 @@ lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.0"
 compose-bom = "2023.03.00"
 apollographql-apollo3 = "3.8.2"
-spotless = "5.15.0"
+spotless = "5.17.1"
 
 [libraries]
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance-appwidget" }
