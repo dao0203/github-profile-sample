@@ -2,6 +2,8 @@
 agp = "8.1.2"
 dotenv-kotlin = "6.4.1"
 glance-appwidget = "1.0.0"
+koin-android = "3.1.2"
+kotlinx-datetime = "0.4.1"
 org-jetbrains-kotlin-android = "1.8.10"
 core-ktx = "1.9.0"
 junit = "4.13.2"
@@ -11,6 +13,7 @@ lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.0"
 compose-bom = "2023.03.00"
 apollographql-apollo3 = "3.8.2"
+spotless = "5.15.0"
 
 [libraries]
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance-appwidget" }
@@ -20,6 +23,8 @@ dotenv-kotlin = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "d
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-android" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
@@ -36,6 +41,7 @@ material3 = { group = "androidx.compose.material3", name = "material3" }
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
 com-apollographql-apollo3 = { id = "com.apollographql.apollo3", version.ref = "apollographql-apollo3" }
+com-diffplug-spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [bundles]
 
