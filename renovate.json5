@@ -15,8 +15,7 @@
       "automerge": true
     }
   ],
-  // 毎週月曜日の5時に実行
   "schedule": [
-    "on monday at 5"
+    "every weekend"
   ]
 }
