@@ -37,5 +37,4 @@ class GithubRepositoryImpl(
                 }
         emit(contributions ?: emptyList())
     }.flowOn(defaultDispatcher)
-
 }

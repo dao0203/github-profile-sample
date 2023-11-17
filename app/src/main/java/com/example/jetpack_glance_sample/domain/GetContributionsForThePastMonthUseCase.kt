@@ -28,6 +28,5 @@ class GetContributionsForThePastMonthUseCase(
         )
             .catch { throw it }
             .collect(::emit)
-
     }
 }

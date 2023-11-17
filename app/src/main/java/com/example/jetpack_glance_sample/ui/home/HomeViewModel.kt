@@ -24,7 +24,6 @@ class HomeViewModel(
             initialValue = HomeUiState()
         )
 
-
     data class HomeUiState(
         val isLoading: Boolean = true,
         val contributions: List<Contribution> = emptyList(),
