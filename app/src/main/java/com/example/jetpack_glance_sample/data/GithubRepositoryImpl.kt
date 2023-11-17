@@ -8,9 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.datetime.Instant
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.toLocalDate
 
 class GithubRepositoryImpl(
     private val defaultDispatcher: CoroutineDispatcher = Dispatchers.IO,
@@ -33,8 +31,7 @@ class GithubRepositoryImpl(
             response.data?.user?.contributionsCollection?.contributionCalendar?.weeks?.flatMap { it.contributionDays }
                 ?.map {
                     Contribution(
-                        date = Instant.parse(it.date.toString())
-                            .toLocalDateTime(TimeZone.currentSystemDefault()),
+                        date = it.date.toString().toLocalDate(),
                         count = it.contributionCount
                     )
                 }
