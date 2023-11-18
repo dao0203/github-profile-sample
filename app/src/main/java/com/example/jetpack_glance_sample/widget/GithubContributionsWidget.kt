@@ -12,6 +12,7 @@ import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.cornerRadius
 import androidx.glance.appwidget.provideContent
 import androidx.glance.background
+import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.Column
 import androidx.glance.layout.Row
@@ -50,13 +51,14 @@ class GithubContributionsWidget : GlanceAppWidget(), KoinComponent {
     ) {
         val weeks = contributions.chunked(7)
         Box(
-            modifier = GlanceModifier.fillMaxSize().background(Color(0xFFFFFFFF))
+            modifier = GlanceModifier.fillMaxSize().background(Color(0xFFFFFFFF)),
+            contentAlignment = Alignment.Center
         ) {
             Row(
-                GlanceModifier.padding(8.dp)
+                GlanceModifier.padding(8.dp),
             ) {
                 weeks.forEach { weekContributions ->
-                    Column(GlanceModifier.padding(2.dp)) {
+                    Column(GlanceModifier.padding(1.dp)) {
                         weekContributions.forEach { dayContribution ->
                             val backgroundColor = when (dayContribution.count) {
                                 0 -> 0x10000000
@@ -66,7 +68,7 @@ class GithubContributionsWidget : GlanceAppWidget(), KoinComponent {
                             }
                             Spacer(
                                 GlanceModifier
-                                    .size(16.dp)
+                                    .size(12.dp)
                                     .background(Color(backgroundColor))
                                     .cornerRadius(4.dp)
                             )
