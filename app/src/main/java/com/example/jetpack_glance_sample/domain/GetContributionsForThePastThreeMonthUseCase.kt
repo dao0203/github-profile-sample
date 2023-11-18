@@ -8,13 +8,13 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.datetime.Clock
 import kotlin.time.Duration.Companion.days
 
-class GetContributionsForThePastMonthUseCase(
+class GetContributionsForThePastThreeMonthUseCase(
     private val githubRepository: GithubRepository
 ) {
 
     companion object {
-        private const val TAG = "GetContributionsForThePastMonthUseCase"
-        private const val BETWEEN_DAYS = 31
+        private const val TAG = "GetContributionsForThePastThreeMonthUseCase"
+        private const val BETWEEN_DAYS = 93
     }
 
     operator fun invoke(username: String): Flow<List<Contribution>> = flow {

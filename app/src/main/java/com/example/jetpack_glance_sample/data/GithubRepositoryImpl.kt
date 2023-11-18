@@ -5,6 +5,7 @@ import com.example.jetpack_glance_sample.GetContributionsQuery
 import com.example.jetpack_glance_sample.model.Contribution
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -19,22 +20,25 @@ class GithubRepositoryImpl(
         from: String,
         to: String
     ): Flow<List<Contribution>> = flow {
-        // 今日の日付と1ヶ月前の日付を取得
-        val response = apolloClient.query(
-            GetContributionsQuery(
-                username = username,
-                from = from,
-                to = to
-            )
-        ).execute()
-        val contributions =
-            response.data?.user?.contributionsCollection?.contributionCalendar?.weeks?.flatMap { it.contributionDays }
-                ?.map {
-                    Contribution(
-                        date = it.date.toString().toLocalDate(),
-                        count = it.contributionCount
-                    )
-                }
-        emit(contributions ?: emptyList())
+        while (true) {
+            // 今日の日付と1ヶ月前の日付を取得
+            val response = apolloClient.query(
+                GetContributionsQuery(
+                    username = username,
+                    from = from,
+                    to = to
+                )
+            ).execute()
+            val contributions =
+                response.data?.user?.contributionsCollection?.contributionCalendar?.weeks?.flatMap { it.contributionDays }
+                    ?.map {
+                        Contribution(
+                            date = it.date.toString().toLocalDate(),
+                            count = it.contributionCount
+                        )
+                    }
+            emit(contributions ?: emptyList())
+            delay(2000L)
+        }
     }.flowOn(defaultDispatcher)
 }
