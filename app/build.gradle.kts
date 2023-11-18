@@ -29,8 +29,21 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField(
+                "String",
+                "GITHUB_ACCESS_TOKEN",
+                "${properties["GITHUB_ACCESS_TOKEN"]}"
+            )
+        }
+        debug {
+            buildConfigField(
+                "String",
+                "GITHUB_ACCESS_TOKEN",
+                "${properties["GITHUB_ACCESS_TOKEN"]}"
+            )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -40,6 +53,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -55,6 +69,7 @@ dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.runtime.compose)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
@@ -76,14 +91,12 @@ dependencies {
     //apollo3
     implementation(libs.com.apollographql.apollo3.runtime)
 
-    //dotenv
-    implementation(libs.dotenv.kotlin)
-
     //kotlinx-datetime
     implementation(libs.kotlinx.datetime)
 
     //koin for android
     implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 
 }
 
