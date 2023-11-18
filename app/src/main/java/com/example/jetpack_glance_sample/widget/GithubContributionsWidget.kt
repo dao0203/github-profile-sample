@@ -28,7 +28,7 @@ import org.koin.core.component.inject
 class GithubContributionsWidget : GlanceAppWidget(), KoinComponent {
 
     private val getContributionsForThePastTwoMonthsUseCase:
-            GetContributionsForThePastTwoMonthsUseCase by inject()
+        GetContributionsForThePastTwoMonthsUseCase by inject()
 
     companion object {
         private const val TAG = "GithubContributionsWidget"
@@ -64,6 +64,8 @@ class GithubContributionsWidget : GlanceAppWidget(), KoinComponent {
                                 0 -> 0x10000000
                                 in 1..10 -> 0x3300FF00
                                 in 11..20 -> 0x6600FF00
+                                in 21..30 -> 0x9900FF00
+                                in 31..40 -> 0xCC00FF00
                                 else -> 0x9900FF00
                             }
                             Spacer(
@@ -75,23 +77,6 @@ class GithubContributionsWidget : GlanceAppWidget(), KoinComponent {
                         }
                     }
                 }
-//                    val contribution = contributions[item]
-//
-//                    val backgroundColor = when (contribution.count) {
-//                        0 -> 0x10000000
-//                        in 1..10 -> 0x3300FF00
-//                        in 11..20 -> 0x6600FF00
-//                        else -> 0x9900FF00
-//                    }
-//
-//                    Box(
-//                        modifier = GlanceModifier
-//                            .fillMaxSize()
-//                            .background(Color(backgroundColor))
-//                            .cornerRadius(4.dp)
-//                    ) {
-//                        Text(text = " ")
-//                    }
             }
         }
     }
