@@ -1,4 +1,4 @@
-package com.example.jetpack_glance_sample.glance
+package com.example.jetpack_glance_sample.widget
 
 import android.content.Context
 import androidx.glance.GlanceId

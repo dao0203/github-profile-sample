@@ -25,7 +25,7 @@
         </activity>
 
         <receiver
-            android:name=".glance.GlanceSampleWidgetReceiver"
+            android:name=".widget.GlanceSampleWidgetReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -35,7 +35,7 @@
                 android:resource="@xml/glance_sample_widget_info" />
         </receiver>
 
-        <receiver android:name=".glance.GithubContributionsWidgetReceiver"
+        <receiver android:name=".widget.GithubContributionsWidgetReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
