@@ -1,2 +1,2 @@
-# github-profile-sample
-Jetpack Glance他、新しいDIフレームワークなどを用いたAndroidモバイルアプリ
+# jetpack-glance-sample
+Jetpack Glance他、koin,github actions, reviewdog, apollographqlなどを用いたAndroidモバイルアプリです。
