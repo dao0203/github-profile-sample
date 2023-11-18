@@ -29,8 +29,21 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField(
+                "String",
+                "GITHUB_ACCESS_TOKEN",
+                "${properties["GITHUB_ACCESS_TOKEN"]}"
+            )
+        }
+        debug {
+            buildConfigField(
+                "String",
+                "GITHUB_ACCESS_TOKEN",
+                "${properties["GITHUB_ACCESS_TOKEN"]}"
+            )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -40,6 +53,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
