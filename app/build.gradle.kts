@@ -91,9 +91,6 @@ dependencies {
     //apollo3
     implementation(libs.com.apollographql.apollo3.runtime)
 
-    //dotenv
-    implementation(libs.dotenv.kotlin)
-
     //kotlinx-datetime
     implementation(libs.kotlinx.datetime)
 
