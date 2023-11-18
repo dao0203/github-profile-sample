@@ -8,3 +8,4 @@ Jetpack Glance他、koin,github actions, reviewdog, apollographqlなどを用い
   - https://github.com/dao0203/github-profile-sample/pull/8
 - jetpack-glanceを使用して2ヶ月分のContributionをAppWidgetに表示
   - https://github.com/dao0203/github-profile-sample/blob/main/app/src/main/java/com/example/jetpack_glance_sample/widget/GithubContributionsWidget.kt
+  - https://github.com/dao0203/github-profile-sample/pull/25
