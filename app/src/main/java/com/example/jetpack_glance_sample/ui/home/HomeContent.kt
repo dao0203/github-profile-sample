@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,7 +36,8 @@ fun HomeContent(
                     .Fixed(7),
                 modifier = Modifier
                     .height(128.dp)
-                    .fillMaxSize(),
+                    .fillMaxSize()
+                    .padding(8.dp),
                 horizontalArrangement = Arrangement.spacedBy(4.dp),
                 verticalArrangement = Arrangement.spacedBy(4.dp),
             ) {
@@ -43,7 +45,7 @@ fun HomeContent(
                     uiState.contributions.size,
                     key = { index -> uiState.contributions[index].date.toString() },
 
-                ) { item ->
+                    ) { item ->
                     // githubのContributionのように、数が多ければ多いほど、色が濃くなるようにする
                     // 0は灰色, 1 ~ 10 は 少し緑 11 ~ 20は普通の緑, 21 ~ は濃い緑
                     val contribution = uiState.contributions[item]
