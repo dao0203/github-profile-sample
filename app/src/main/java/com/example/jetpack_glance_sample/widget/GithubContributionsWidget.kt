@@ -33,10 +33,6 @@ class GithubContributionsWidget : GlanceAppWidget(), KoinComponent {
     private val getContributionsForThePastTwoMonthsUseCase:
         GetContributionsForThePastTwoMonthsUseCase by inject()
 
-    companion object {
-        private const val TAG = "GithubContributionsWidget"
-    }
-
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
             val contributions by getContributionsForThePastTwoMonthsUseCase("dao0203")
