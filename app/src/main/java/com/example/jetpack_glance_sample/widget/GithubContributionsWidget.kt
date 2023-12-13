@@ -31,7 +31,7 @@ import org.koin.core.component.inject
 class GithubContributionsWidget : GlanceAppWidget(), KoinComponent {
 
     private val getContributionsForThePastTwoMonthsUseCase:
-            GetContributionsForThePastTwoMonthsUseCase by inject()
+        GetContributionsForThePastTwoMonthsUseCase by inject()
 
     companion object {
         private const val TAG = "GithubContributionsWidget"
