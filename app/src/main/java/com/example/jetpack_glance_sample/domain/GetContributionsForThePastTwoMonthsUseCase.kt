@@ -14,12 +14,12 @@ class GetContributionsForThePastTwoMonthsUseCase(
 
     companion object {
         private const val TAG = "GetContributionsForThePastTwoMonthsUseCase"
-        private const val BETWEEN_DAYS = 62
+        private const val DAYS_IN_PAST_TWO_MONTHS = 62
     }
 
     operator fun invoke(username: String): Flow<List<Contribution>> = flow {
         val today = Clock.System.now()
-        val from = today.minus(BETWEEN_DAYS.days)
+        val from = today.minus(DAYS_IN_PAST_TWO_MONTHS.days)
 
         githubRepository.getContributions(
             username = username,
