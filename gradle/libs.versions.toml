@@ -1,5 +1,5 @@
 [versions]
-agp = "8.1.4"
+agp = "8.7.1"
 glance-appwidget = "1.0.0"
 koin-android = "3.5.3"
 kotlinx-datetime = "0.4.1"
